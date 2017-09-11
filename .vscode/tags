@@ -4,11 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CG2	../scripts/lib/file_helper.py	/^class CG2(Experiment):$/;"	kind:class	line:174
-CG3	../scripts/lib/file_helper.py	/^class CG3(Experiment):$/;"	kind:class	line:178
+CG2	../scripts/lib/file_helper.py	/^class CG2(Experiment):$/;"	kind:class	line:198
+CG3	../scripts/lib/file_helper.py	/^class CG3(Experiment):$/;"	kind:class	line:202
 DarkCurrentFile	../scripts/sensitivity_20170818.py	/^    DarkCurrentFile=dark_flood,$/;"	kind:variable	line:48
 DegreeofThePolynomial	../scripts/sensitivity_20170818.py	/^    DegreeofThePolynomial=3$/;"	kind:variable	line:72
-Experiment	../scripts/lib/file_helper.py	/^class Experiment(object):$/;"	kind:class	line:23
+Experiment	../scripts/lib/file_helper.py	/^class Experiment(object):$/;"	kind:class	line:24
 Filename	../scripts/sensitivity_20170818.py	/^    Filename=flood_field_raw,$/;"	kind:variable	line:46
 Filename	../scripts/sensitivity_20170818.py	/^    Filename=output_file$/;"	kind:variable	line:77
 InputWorkspace	../scripts/sensitivity_20170818.py	/^    InputWorkspace='sensitivity_raw',$/;"	kind:variable	line:60
@@ -20,21 +20,22 @@ OutputSensitivityWorkspace	../scripts/sensitivity_20170818.py	/^    OutputSensit
 OutputWorkspace	../scripts/sensitivity_20170818.py	/^    OutputWorkspace='masked'$/;"	kind:variable	line:61
 PatchWorkspace	../scripts/sensitivity_20170818.py	/^    PatchWorkspace='masked',$/;"	kind:variable	line:71
 ReductionProperties	../scripts/sensitivity_20170818.py	/^    ReductionProperties=ReductionSingleton().property_manager$/;"	kind:variable	line:55
-TestCG3	../scripts/lib/file_helper.py	/^class TestCG3(unittest.TestCase):$/;"	kind:class	line:186
+TestCG2	../scripts/lib/file_helper.py	/^class TestCG2(unittest.TestCase):$/;"	kind:class	line:271
+TestCG3	../scripts/lib/file_helper.py	/^class TestCG3(unittest.TestCase):$/;"	kind:class	line:210
 UseSampleDC	../scripts/sensitivity_20170818.py	/^    UseSampleDC=False,$/;"	kind:variable	line:47
-__init__	../scripts/lib/file_helper.py	/^    def __init__(self, beamline, ipts_number, exp_number):$/;"	kind:member	line:29
-__init__	../scripts/lib/file_helper.py	/^    def __init__(self, ipts_number, exp_number):$/;"	kind:member	line:175
-__init__	../scripts/lib/file_helper.py	/^    def __init__(self, ipts_number, exp_number):$/;"	kind:member	line:179
-_fullpath	../scripts/lib/file_helper.py	/^    def _fullpath(self, scan_number, frame_number):$/;"	kind:member	line:67
-_hyphen_range	../scripts/lib/file_helper.py	/^    def _hyphen_range(self, s):$/;"	kind:member	line:86
-_instruments	../scripts/lib/file_helper.py	/^    _instruments = {$/;"	kind:variable	line:24
-_make_paths	../scripts/lib/file_helper.py	/^    def _make_paths(self):$/;"	kind:member	line:44
-_mkdir_p	../scripts/lib/file_helper.py	/^    def _mkdir_p(path):$/;"	kind:member	line:36
+__init__	../scripts/lib/file_helper.py	/^    def __init__(self, beamline, ipts_number, exp_number):$/;"	kind:member	line:30
+__init__	../scripts/lib/file_helper.py	/^    def __init__(self, ipts_number, exp_number):$/;"	kind:member	line:199
+__init__	../scripts/lib/file_helper.py	/^    def __init__(self, ipts_number, exp_number):$/;"	kind:member	line:203
+_fullpath	../scripts/lib/file_helper.py	/^    def _fullpath(self, scan_number, frame_number):$/;"	kind:member	line:72
+_hyphen_range	../scripts/lib/file_helper.py	/^    def _hyphen_range(self, s):$/;"	kind:member	line:92
+_instruments	../scripts/lib/file_helper.py	/^    _instruments = {$/;"	kind:variable	line:25
+_make_paths	../scripts/lib/file_helper.py	/^    def _make_paths(self):$/;"	kind:member	line:45
+_mkdir_p	../scripts/lib/file_helper.py	/^    def _mkdir_p(path):$/;"	kind:member	line:37
 background_scattering_list	../scripts/cg2_reduce.py	/^background_scattering_list = cg2.range(80,1)$/;"	kind:variable	line:30
 background_scattering_list	../scripts/cg2_reduce_20170818.py	/^background_scattering_list = cg2.repeat(8, 1, 4)$/;"	kind:variable	line:35
 background_transmission_list	../scripts/cg2_reduce.py	/^background_transmission_list = cg2.range(4,1)$/;"	kind:variable	line:33
 background_transmission_list	../scripts/cg2_reduce_20170818.py	/^background_transmission_list = cg2.repeat(8, 1, 4)$/;"	kind:variable	line:37
-base	../scripts/lib/file_helper.py	/^    def base(self):$/;"	kind:member	line:151
+base	../scripts/lib/file_helper.py	/^    def base(self):$/;"	kind:member	line:175
 beam_center_filename	../scripts/cg2_reduce.py	/^beam_center_filename = cg2.filepath(45,1)$/;"	kind:variable	line:41
 beam_center_filename	../scripts/cg2_reduce_20170818.py	/^beam_center_filename = cg2.filepath(8,1)$/;"	kind:variable	line:46
 cg2	../scripts/cg2_reduce.py	/^cg2 = CG2(18381, 180)$/;"	kind:variable	line:26
@@ -47,11 +48,11 @@ dark_filename	../scripts/cg2_reduce.py	/^dark_filename = CG2(18381,180).filepath
 dark_flood	../scripts/sensitivity_20170818.py	/^dark_flood = cg2.filepath(38, 1)$/;"	kind:variable	line:29
 data_out_folder	../scripts/cg2_reduce.py	/^data_out_folder = cg2.shared("Reduced")$/;"	kind:variable	line:53
 data_out_folder	../scripts/cg2_reduce_20170818.py	/^data_out_folder = cg2.shared("Ricardo")$/;"	kind:variable	line:63
-datafiles	../scripts/lib/file_helper.py	/^    def datafiles(self):$/;"	kind:member	line:144
+datafiles	../scripts/lib/file_helper.py	/^    def datafiles(self):$/;"	kind:member	line:168
 empty_transmission_filename	../scripts/cg2_reduce.py	/^empty_transmission_filename = cg2.filepath(16,1)$/;"	kind:variable	line:38
 empty_transmission_filename	../scripts/cg2_reduce_20170818.py	/^empty_transmission_filename = cg2.filepath(8,1)$/;"	kind:variable	line:43
 file_helper.py	../scripts/lib/file_helper.py	1;"	kind:file	line:1
-filepath	../scripts/lib/file_helper.py	/^    def filepath(self, scan_number, frame_number):$/;"	kind:member	line:102
+filepath	../scripts/lib/file_helper.py	/^    def filepath(self, scan_number, frame_number):$/;"	kind:member	line:109
 flood_field_center	../scripts/sensitivity_20170818.py	/^flood_field_center = cg2.filepath(16, 1)$/;"	kind:variable	line:26
 flood_field_file_patched	../scripts/sensitivity.py	/^flood_field_file_patched = "\/HFIR\/CG2\/shared\/floods\/sensitivity_patched_dt1_6.8m.nxs"$/;"	kind:variable	line:24
 flood_field_file_raw	../scripts/sensitivity.py	/^flood_field_file_raw = cg2.filepath(45,1)$/;"	kind:variable	line:20
@@ -64,8 +65,9 @@ masked_pixel_ids	../scripts/cg2_reduce_20170818.py	/^    masked_pixel_ids = json
 output_file	../scripts/sensitivity_20170818.py	/^output_file = os.path.join(output_folder, "sensitivity.nxs")$/;"	kind:variable	line:33
 output_folder	../scripts/sensitivity_20170818.py	/^output_folder = cg2.shared('Ricardo')$/;"	kind:variable	line:32
 print_properties	../scripts/mantid_helper.py	/^def print_properties(ws_name):$/;"	kind:function	line:6
-range	../scripts/lib/file_helper.py	/^    def range(self, scan_range, frame_range):$/;"	kind:member	line:108
-repeat	../scripts/lib/file_helper.py	/^    def repeat(self, scan_number, frame_number, times=1):$/;"	kind:member	line:133
+range	../scripts/lib/file_helper.py	/^    def range(self, scan_range, frame_range):$/;"	kind:member	line:115
+range_nested	../scripts/lib/file_helper.py	/^    def range_nested(self, scan_range, frame_range):$/;"	kind:member	line:140
+repeat	../scripts/lib/file_helper.py	/^    def repeat(self, scan_number, frame_number, times=1):$/;"	kind:member	line:157
 root_path	../scripts/cg2_reduce.py	/^root_path = cg2.datafiles$/;"	kind:variable	line:58
 root_path	../scripts/cg2_reduce_20170818.py	/^root_path = cg2.datafiles$/;"	kind:variable	line:67
 sample_scattering_list	../scripts/cg2_reduce.py	/^sample_scattering_list = cg2.range(45,1)$/;"	kind:variable	line:29
@@ -75,14 +77,17 @@ sample_transmission_list	../scripts/cg2_reduce_20170818.py	/^sample_transmission
 sensitivity.py	../scripts/sensitivity.py	1;"	kind:file	line:1
 sensitivity_20170818.py	../scripts/sensitivity_20170818.py	1;"	kind:file	line:1
 sensitivity_dark_current	../scripts/cg2_reduce.py	/^sensitivity_dark_current =  CG2(18381,180).filepath(40,1)$/;"	kind:variable	line:46
-setUp	../scripts/lib/file_helper.py	/^    def setUp(self):$/;"	kind:member	line:191
-shared	../scripts/lib/file_helper.py	/^    def shared(self, *paths):$/;"	kind:member	line:157
-tearDown	../scripts/lib/file_helper.py	/^    def tearDown(self):$/;"	kind:member	line:194
-test_filepath	../scripts/lib/file_helper.py	/^    def test_filepath(self):$/;"	kind:member	line:198
-test_folders	../scripts/lib/file_helper.py	/^    def test_folders(self):$/;"	kind:member	line:229
-test_make_folders	../scripts/lib/file_helper.py	/^    def test_make_folders(self):$/;"	kind:member	line:234
-test_ranges	../scripts/lib/file_helper.py	/^    def test_ranges(self):$/;"	kind:member	line:208
-test_repeat	../scripts/lib/file_helper.py	/^    def test_repeat(self):$/;"	kind:member	line:242
+setUp	../scripts/lib/file_helper.py	/^    def setUp(self):$/;"	kind:member	line:215
+setUp	../scripts/lib/file_helper.py	/^    def setUp(self):$/;"	kind:member	line:276
+shared	../scripts/lib/file_helper.py	/^    def shared(self, *paths):$/;"	kind:member	line:181
+tearDown	../scripts/lib/file_helper.py	/^    def tearDown(self):$/;"	kind:member	line:218
+tearDown	../scripts/lib/file_helper.py	/^    def tearDown(self):$/;"	kind:member	line:279
+test_filepath	../scripts/lib/file_helper.py	/^    def test_filepath(self):$/;"	kind:member	line:222
+test_folders	../scripts/lib/file_helper.py	/^    def test_folders(self):$/;"	kind:member	line:253
+test_make_folders	../scripts/lib/file_helper.py	/^    def test_make_folders(self):$/;"	kind:member	line:258
+test_range_nested	../scripts/lib/file_helper.py	/^    def test_range_nested(self):$/;"	kind:member	line:282
+test_ranges	../scripts/lib/file_helper.py	/^    def test_ranges(self):$/;"	kind:member	line:232
+test_repeat	../scripts/lib/file_helper.py	/^    def test_repeat(self):$/;"	kind:member	line:266
 thickness_list	../scripts/cg2_reduce.py	/^thickness_list =  [0.1]$/;"	kind:variable	line:35
 thickness_list	../scripts/cg2_reduce_20170818.py	/^thickness_list = [0.1]*4$/;"	kind:variable	line:40
 ws_main_name	../scripts/cg2_reduce.py	/^    ws_main_name = os.path.basename( os.path.splitext(sample_scattering)[0])$/;"	kind:variable	line:73
