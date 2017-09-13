@@ -12,6 +12,8 @@ import os
 import errno
 import unittest
 import shutil
+import re
+from collections import defaultdict, OrderedDict
 
 try:
     from mantid.simpleapi import logger
@@ -206,6 +208,124 @@ class CG3(Experiment):
         super(CG3, self).__init__("CG3", ipts_number, exp_number)
 
 
+class Names(object):
+    '''
+    '''
+
+    def __init__(self, filepaths, prefix=''):
+        '''
+        filepaths can be:
+
+        '''
+        self.filepaths = filepaths
+        self.prefix = prefix
+    
+    def _parse_single_file(self, filepath):
+        '''
+        filepath is the form of:
+        /HFIR/CG3/IPTS-18347/exp379/Datafiles/BioSANS_exp379_scan0030_0002.xml
+        returns a dictionary with { scan: frame}
+        
+        >>> filepath = '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0001.xml'
+        >>> n = Names(filepath)
+        >>> n._parse_single_file(filepath)
+        {'6': '1'}
+        '''
+        filename = os.path.basename(filepath)
+        pattern = r'(?P<prefix>\w+)_exp(?P<exp>\d+)_scan(?P<scan>\d{4})_'\
+            '(?P<frame>\d{4}).xml'
+        m = re.match(pattern, filename)
+        if m:
+            scan = int(m.group('scan'))
+            frame = int(m.group('frame'))
+            return {str(scan): str(frame)}
+        else:
+            return None
+    
+    def _parse_multiple_files(self, filepaths):
+        '''
+        filepaths is a list of filepaths
+        returns a dictionary with {scan: (frame1, frame2)}
+
+        >>> filepaths = ['/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0001.xml',
+        ... '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0002.xml',
+        ... '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0003.xml',
+        ... '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0004.xml']
+        >>> n = Names(filepaths)
+        >>> n._parse_multiple_files(filepaths)
+        {'6': ['1', '2', '3', '4']}
+
+        '''
+        dd = defaultdict(list)
+        for filepath in filepaths:
+            d = self._parse_single_file(filepath)
+            for key, value in d.iteritems():
+                    dd[key].append(value)
+        return dict(dd)
+    
+    def _dict_to_string(self, d):
+        '''
+        >>> n = Names(None)
+        >>> n._dict_to_string({'6': '1'})
+        'scan6_frame1'
+        >>> n._dict_to_string({'6': ['1', '2', '3', '4']})
+        'scan6_frame1-2-3-4'
+        >>> n._dict_to_string(OrderedDict({'6': ['1', '2', '3', '4'], 
+        ...     '3': ['11', '12', '13', '14']}))
+        'scan3_frame11-12-13-14_scan6_frame1-2-3-4'
+
+        >>> n = Names(None,"xpto")
+        >>> n._dict_to_string({'6': '1'})
+        'xpto_scan6_frame1'
+        >>> n._dict_to_string({'6': ['1', '2', '3', '4']})
+        'xpto_scan6_frame1-2-3-4'
+        '''
+        ret = self.prefix + "_" if self.prefix else ''
+        for idx, (key, value) in enumerate(d.items()):
+            ret += "scan{}_frame{}".format(
+                key,
+                '-'.join(value)
+            )
+            if idx != len(d)-1:
+                ret += '_'
+        return ret
+
+    def parse(self):
+        '''
+        This is the main method. Use it to transform a file path
+        or a list of file paths to a string.
+
+        >>> filepath = '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0001.xml'
+        >>> n = Names(filepath)
+        >>> n.parse()
+        'scan6_frame1'
+
+        >>> filepaths = ['/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0001.xml',
+        ... '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0002.xml',
+        ... '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0003.xml',
+        ... '/HFIR/CG2/IPTS-19748/exp240/Datafiles/CG2_exp240_scan0006_0004.xml']
+        >>> n = Names(filepaths, "xpto")
+        >>> n.parse()
+        'xpto_scan6_frame1-2-3-4'
+
+        '''
+        if isinstance(self.filepaths, str):
+            d = self._parse_single_file(self.filepaths)
+            return self._dict_to_string(d)
+        elif isinstance(self.filepaths, list):
+            d = self._parse_multiple_files(self.filepaths)
+            return self._dict_to_string(d)
+        else:
+            logger.error("Cannot parse: {}".format(self.filepaths))
+            return None
+
+#
+# Tests
+#
+
+
+
+
 class TestCG3(unittest.TestCase):
     '''
     Unit tests
@@ -294,5 +414,14 @@ if __name__ == "__main__":
     This will run the tests
     '''
     logging.basicConfig(level=logging.DEBUG)
-    unittest.main()
-
+    print(80*"-")
+    print("\t\tDocTest")
+    print(80*"-")
+    import doctest
+    test_result = doctest.testmod(verbose=False)
+    
+    if test_result.failed == 0:    
+        print(80*"-")
+        print("\t\tUnitTest")
+        print(80*"-")
+        unittest.main()

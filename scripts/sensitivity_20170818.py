@@ -3,6 +3,7 @@ from __future__ import print_function
 '''
 
 This script can be used for generation of the flood files
+(creates a sensitivity file)
 
 Done and tested with Lisa on 2017/08/18
 

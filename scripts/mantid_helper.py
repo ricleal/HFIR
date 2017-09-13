@@ -1,6 +1,10 @@
 # pylint: disable=line-too-long,C0103
 from __future__ import print_function
 
+'''
+Generic functions that might be help to debug stuff inside mantid
+
+'''
 from mantid.simpleapi import logger
 
 def print_properties(ws_name):
