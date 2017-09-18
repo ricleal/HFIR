@@ -157,6 +157,10 @@ class Experiment(object):
         return ret
 
     def repeat(self, scan_number, frame_number, times=1):
+        '''
+        It will repeat n times (default 1) this scan number
+        and frame number
+        '''
         res = []
         for _ in range(times):
             try:

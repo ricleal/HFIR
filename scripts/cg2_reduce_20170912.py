@@ -47,7 +47,6 @@ empty_transmission_filename = cg2.filepath(20,1)
 beam_center_filename = cg2.filepath(20,1)
 
 
-
 # MACHINE PHYSICS FILES
 flood_field_filename =  os.path.join( CG2(828, 206).shared('Ricardo'), "sensitivity.nxs")
 
@@ -64,6 +63,18 @@ with open('/HFIR/CG2/shared/scripts/masked_pixel_ids.json', 'r') as f:
 
 # Output folder
 data_out_folder = cg2.shared("Ricardo")
+
+# Make sure the input lists have all the same size:
+input_lists = [
+    sample_scattering_list,
+    background_scattering_list,
+    sample_transmission_list,
+    background_transmission_list,
+    thickness_list
+]
+assert all(len(x) == len(input_lists[0]) for x in input_lists), \
+    "All input lists must be the same size!"
+
 #
 # Main cycle
 #
@@ -75,11 +86,7 @@ for (sample_scattering,
      background_scattering,
      sample_transmission,
      background_transmission,
-     thickness) in zip(sample_scattering_list,
-                       background_scattering_list,
-                       sample_transmission_list,
-                       background_transmission_list,
-                       thickness_list):
+     thickness) in zip(input_lists):
 
     # get filename from /a/b/c/filename.ext
     ws_name = Names(sample_scattering).parse()
