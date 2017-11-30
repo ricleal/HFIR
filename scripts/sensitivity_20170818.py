@@ -30,7 +30,7 @@ flood_field_center = cg2.filepath(16, 1)
 dark_flood = cg2.filepath(38, 1)
 
 # Creates a folder in shared
-output_folder = cg2.shared('Ricardo')
+output_folder = "/tmp"
 output_file = os.path.join(output_folder, "sensitivity.nxs")
 
 GPSANS()
@@ -49,9 +49,9 @@ SANSSensitivityCorrection(
     DarkCurrentFile=dark_flood,
     # You may need to edit this!!
     # MinEfficiency too high masks the tubes!
-    # See the ouput workspace
-    MinEfficiency=0.1,
-    MaxEfficiency=1.5,
+    # See the output workspace
+    MinEfficiency=0.5,
+    MaxEfficiency=1.7,
     OutputSensitivityWorkspace="sensitivity_raw",
     ReductionProperties=ReductionSingleton().property_manager
 )
@@ -63,16 +63,22 @@ CloneWorkspace(
 )
 
 #
-# Mask HERE By HAND!!!
-# Draw a circle around the beamsop in instrument view
-# for the masked workspace. Then do: Apply to Data
+# MASK `masked` workspace by HAND in MantidPlot
+# --------------------
+# Open the Instrument View for the `masked` workspace.
+# Draw a circle around the beamstop and the top and bottom of the detector
+# Then do: Apply to Data
 #
+
+# Once you have apply the masks zones the data in the `masked` workspace do:
 SANSPatchSensitivity(
     InputWorkspace='sensitivity_raw',
     PatchWorkspace='masked',
     DegreeofThePolynomial=3
 )
 
+# Save the the sensitivity RAW. This file is then used in the regular
+# SANS Reduction algorithms
 SaveNexus(
     InputWorkspace='sensitivity_raw',
     Filename=output_file
