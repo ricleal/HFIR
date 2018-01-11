@@ -56,7 +56,7 @@ class Experiment(object):
                 os.sep,
                 'HFIR',
                 self._beamline,
-                'IPTS-{:04}'.format(self._ipts_number),
+                'IPTS-{}'.format(self._ipts_number),
                 'exp{}'.format(self._exp_number),
             )
         )
@@ -65,11 +65,11 @@ class Experiment(object):
         self._folder_datafiles = os.path.join(self._folder_base, "Datafiles")
 
         if not os.path.exists(self._folder_base):
-            logger.error("The Folder is not valid: %s", self._folder_base)
+            logger.error("The Folder is not valid: {}".format(self._folder_base))
         if not os.path.exists(self._folder_shared):
-            logger.error("The Folder is not valid: %s", self._folder_shared)
+            logger.error("The Folder is not valid: {}".format(self._folder_shared))
         if not os.path.exists(self._folder_datafiles):
-            logger.error("The Folder is not valid: %s", self._folder_datafiles)
+            logger.error("The Folder is not valid: {}".format(self._folder_datafiles))
 
     def _fullpath(self, scan_number, frame_number):
         '''
