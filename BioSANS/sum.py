@@ -1,14 +1,38 @@
 #!/usr/bin/env python
 
-"""
+from __future__ import print_function
 
 """
 
-import sys
+Sums the counts for HFIR SANS xml files
+
+Usage:
+
+./sum.py -h
+usage: sum.py [-h] [-o OUTPUT_FILE] files
+
+Sum of HFIR SANS Files
+
+positional arguments:
+  files           Use Unix wildcars between quotes
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -o OUTPUT_FILE  Default: /Users/rhf/git/HFIR/BioSANS/out.xml
+
+
+Example:
+--------
+./sum.py "Data/BioSANS_exp530_scan000*" -o /tmp/out.xml
+
+"""
+
+import argparse
 import logging
-
-from glob import glob
+import os
+import sys
 import xml.etree.ElementTree as ET
+from glob import glob
 
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -43,6 +67,7 @@ def sum_file(filename, previous_root):
             else:
                 # Detectors
                 new_lines = []
+                logger.info("Parsing {}.".format(xpath))
                 for p_line, line in zip(elem.text.splitlines(), previous_elem.text.splitlines()):
                     new_line = []
                     for p_i, i in zip(p_line.split(), line.split()):
@@ -50,12 +75,13 @@ def sum_file(filename, previous_root):
                     new_lines.append(new_line)
                 # Convert 2D array into a string
                 elem.text = '\n'.join('\t'.join('%d' %x for x in y) for y in new_lines)
+                elem.text += '\n'
     return root
         
 
 def main():
     
-    files = glob(sys.argv[1])
+    files = glob(args.files)
     if not files:
         logger.error("Nothing to do!")
         return
@@ -65,13 +91,24 @@ def main():
         root = sum_file(file, root)
     
     if root is not None:
-        xmlstr = ET.tostring(root, encoding='utf8', method='xml')
-        with open('/tmp/out.xml', "w") as f:
+        xmlstr = ET.tostring(root, encoding='UTF-8', method='xml')
+        logger.info("Saving %s:", args.output_file)
+        with open(args.output_file, "w") as f:
             f.write(xmlstr)
+
+def parse_arguments():
+    global args
+    parser = argparse.ArgumentParser(
+        description='Sum of HFIR SANS Files')
+    
+    output_file = os.path.join(os.path.dirname(os.path.realpath(__file__)), "out.xml")
+    parser.add_argument('-o', action="store", dest="output_file",
+        default=output_file, help="Default: {}".format(output_file))
+    parser.add_argument('files', help='Use Unix wildcars between quotes')
+
+    args = parser.parse_args()
     
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        logger.error("Use {} <unix file wildcards>".format(sys.argv[0]))
-        sys.exit(-1)
+    parse_arguments()
     main()
