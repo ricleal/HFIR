@@ -1,0 +1,117 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CG2	../lib/file_helper.py	/^class CG2(Experiment):$/;"	kind:class	line:205
+CG3	../lib/file_helper.py	/^class CG3(Experiment):$/;"	kind:class	line:210
+DarkCurrentFile	../sensitivity_20170818.py	/^    DarkCurrentFile=dark_flood,$/;"	kind:variable	line:49
+DegreeofThePolynomial	../sensitivity_20170818.py	/^    DegreeofThePolynomial=3$/;"	kind:variable	line:73
+Experiment	../lib/file_helper.py	/^class Experiment(object):$/;"	kind:class	line:25
+Filename	../sensitivity_20170818.py	/^    Filename=flood_field_raw,$/;"	kind:variable	line:47
+Filename	../sensitivity_20170818.py	/^    Filename=output_file$/;"	kind:variable	line:78
+InputWorkspace	../sensitivity_20170818.py	/^    InputWorkspace='sensitivity_raw',$/;"	kind:variable	line:61
+InputWorkspace	../sensitivity_20170818.py	/^    InputWorkspace='sensitivity_raw',$/;"	kind:variable	line:71
+InputWorkspace	../sensitivity_20170818.py	/^    InputWorkspace='sensitivity_raw',$/;"	kind:variable	line:77
+MaxEfficiency	../sensitivity_20170818.py	/^    MaxEfficiency=1.5,$/;"	kind:variable	line:54
+MinEfficiency	../sensitivity_20170818.py	/^    MinEfficiency=0.1,$/;"	kind:variable	line:53
+Names	../lib/file_helper.py	/^class Names(object):$/;"	kind:class	line:215
+OutputSensitivityWorkspace	../sensitivity_20170818.py	/^    OutputSensitivityWorkspace="sensitivity_raw",$/;"	kind:variable	line:55
+OutputWorkspace	../sensitivity_20170818.py	/^    OutputWorkspace='masked'$/;"	kind:variable	line:62
+PatchWorkspace	../sensitivity_20170818.py	/^    PatchWorkspace='masked',$/;"	kind:variable	line:72
+ReductionProperties	../sensitivity_20170818.py	/^    ReductionProperties=ReductionSingleton().property_manager$/;"	kind:variable	line:56
+TestCG2	../lib/file_helper.py	/^class TestCG2(unittest.TestCase):$/;"	kind:class	line:394
+TestCG3	../lib/file_helper.py	/^class TestCG3(unittest.TestCase):$/;"	kind:class	line:333
+UseSampleDC	../sensitivity_20170818.py	/^    UseSampleDC=False,$/;"	kind:variable	line:48
+__init__	../lib/file_helper.py	/^    def __init__(self, beamline, ipts_number, exp_number):$/;"	kind:member	line:31
+__init__	../lib/file_helper.py	/^    def __init__(self, filepaths, prefix=''):$/;"	kind:member	line:219
+__init__	../lib/file_helper.py	/^    def __init__(self, ipts_number, exp_number):$/;"	kind:member	line:206
+__init__	../lib/file_helper.py	/^    def __init__(self, ipts_number, exp_number):$/;"	kind:member	line:211
+_dict_to_string	../lib/file_helper.py	/^    def _dict_to_string(self, d):$/;"	kind:member	line:270
+_fullpath	../lib/file_helper.py	/^    def _fullpath(self, scan_number, frame_number):$/;"	kind:member	line:74
+_hyphen_range	../lib/file_helper.py	/^    def _hyphen_range(self, s):$/;"	kind:member	line:94
+_instruments	../lib/file_helper.py	/^    _instruments = {$/;"	kind:variable	line:26
+_make_paths	../lib/file_helper.py	/^    def _make_paths(self):$/;"	kind:member	line:47
+_mkdir_p	../lib/file_helper.py	/^    def _mkdir_p(path):$/;"	kind:member	line:38
+_parse_multiple_files	../lib/file_helper.py	/^    def _parse_multiple_files(self, filepaths):$/;"	kind:member	line:249
+_parse_single_file	../lib/file_helper.py	/^    def _parse_single_file(self, filepath):$/;"	kind:member	line:227
+background_scattering_list	../cg2_reduce.py	/^background_scattering_list = cg2.range(80,1)$/;"	kind:variable	line:30
+background_scattering_list	../cg2_reduce_20170818.py	/^background_scattering_list = cg2.repeat(8, 1, 4)$/;"	kind:variable	line:35
+background_scattering_list	../cg2_reduce_20170912.py	/^background_scattering_list = cg2.repeat(17,1, 3)$/;"	kind:variable	line:35
+background_transmission_list	../cg2_reduce.py	/^background_transmission_list = cg2.range(4,1)$/;"	kind:variable	line:33
+background_transmission_list	../cg2_reduce_20170818.py	/^background_transmission_list = cg2.repeat(8, 1, 4)$/;"	kind:variable	line:37
+background_transmission_list	../cg2_reduce_20170912.py	/^background_transmission_list = cg2.repeat(18,1, 3)$/;"	kind:variable	line:38
+base	../lib/file_helper.py	/^    def base(self):$/;"	kind:member	line:181
+beam_center_filename	../cg2_reduce.py	/^beam_center_filename = cg2.filepath(45,1)$/;"	kind:variable	line:41
+beam_center_filename	../cg2_reduce_20170818.py	/^beam_center_filename = cg2.filepath(8,1)$/;"	kind:variable	line:46
+beam_center_filename	../cg2_reduce_20170912.py	/^beam_center_filename = cg2.filepath(20,1)$/;"	kind:variable	line:47
+cg2	../cg2_reduce.py	/^cg2 = CG2(18381, 180)$/;"	kind:variable	line:26
+cg2	../cg2_reduce_20170818.py	/^cg2 = CG2(19551, 219)$/;"	kind:variable	line:31
+cg2	../cg2_reduce_20170912.py	/^cg2 = CG2(19748, 240)$/;"	kind:variable	line:30
+cg2	../sensitivity.py	/^cg2 = CG2(828, 184)$/;"	kind:variable	line:18
+cg2	../sensitivity_20170818.py	/^cg2 = CG2(828, 206)$/;"	kind:variable	line:21
+cg2_reduce.py	../cg2_reduce.py	1;"	kind:file	line:1
+cg2_reduce_20170818.py	../cg2_reduce_20170818.py	1;"	kind:file	line:1
+cg2_reduce_20170912.py	../cg2_reduce_20170912.py	1;"	kind:file	line:1
+dark_filename	../cg2_reduce.py	/^dark_filename = CG2(18381,180).filepath(46,1)$/;"	kind:variable	line:45
+dark_filename	../cg2_reduce_20170912.py	/^dark_filename = "\/HFIR\/CG2\/IPTS-19748\/exp240\/Datafiles\/CG2_exp240_scan0021_0001.xml"$/;"	kind:variable	line:54
+dark_flood	../sensitivity_20170818.py	/^dark_flood = cg2.filepath(38, 1)$/;"	kind:variable	line:30
+data_out_folder	../cg2_reduce.py	/^data_out_folder = cg2.shared("Reduced")$/;"	kind:variable	line:53
+data_out_folder	../cg2_reduce_20170818.py	/^data_out_folder = cg2.shared("Ricardo")$/;"	kind:variable	line:63
+data_out_folder	../cg2_reduce_20170912.py	/^data_out_folder = cg2.shared("Ricardo")$/;"	kind:variable	line:65
+datafiles	../lib/file_helper.py	/^    def datafiles(self):$/;"	kind:member	line:174
+empty_transmission_filename	../cg2_reduce.py	/^empty_transmission_filename = cg2.filepath(16,1)$/;"	kind:variable	line:38
+empty_transmission_filename	../cg2_reduce_20170818.py	/^empty_transmission_filename = cg2.filepath(8,1)$/;"	kind:variable	line:43
+empty_transmission_filename	../cg2_reduce_20170912.py	/^empty_transmission_filename = cg2.filepath(20,1)$/;"	kind:variable	line:44
+file_helper.py	../lib/file_helper.py	1;"	kind:file	line:1
+filepath	../lib/file_helper.py	/^    def filepath(self, scan_number, frame_number):$/;"	kind:member	line:111
+flood_field_center	../sensitivity_20170818.py	/^flood_field_center = cg2.filepath(16, 1)$/;"	kind:variable	line:27
+flood_field_file_patched	../sensitivity.py	/^flood_field_file_patched = "\/HFIR\/CG2\/shared\/floods\/sensitivity_patched_dt1_6.8m.nxs"$/;"	kind:variable	line:24
+flood_field_file_raw	../sensitivity.py	/^flood_field_file_raw = cg2.filepath(45,1)$/;"	kind:variable	line:20
+flood_field_filename	../cg2_reduce_20170818.py	/^flood_field_filename =  os.path.join( CG2(828, 206).shared('Ricardo'), "sensitivity.nxs")$/;"	kind:variable	line:49
+flood_field_filename	../cg2_reduce_20170912.py	/^flood_field_filename =  os.path.join( CG2(828, 206).shared('Ricardo'), "sensitivity.nxs")$/;"	kind:variable	line:51
+flood_field_raw	../sensitivity_20170818.py	/^flood_field_raw = cg2.filepath(17, 1)$/;"	kind:variable	line:24
+input_lists	../cg2_reduce_20170912.py	/^input_lists = [$/;"	kind:variable	line:68
+logger	../lib/file_helper.py	/^    logger = logging.getLogger(__name__)$/;"	kind:variable	line:22
+main_flood_filename	../cg2_reduce.py	/^main_flood_filename =  CG2(828,165).filepath(8,1)$/;"	kind:variable	line:44
+mantid_helper.py	../mantid_helper.py	1;"	kind:file	line:1
+masked_pixel_ids	../cg2_reduce_20170818.py	/^    masked_pixel_ids = json.load(f)$/;"	kind:variable	line:56
+masked_pixel_ids	../cg2_reduce_20170912.py	/^    masked_pixel_ids = json.load(f)$/;"	kind:variable	line:62
+output_file	../sensitivity_20170818.py	/^output_file = os.path.join(output_folder, "sensitivity.nxs")$/;"	kind:variable	line:34
+output_folder	../sensitivity_20170818.py	/^output_folder = cg2.shared('Ricardo')$/;"	kind:variable	line:33
+parse	../lib/file_helper.py	/^    def parse(self):$/;"	kind:member	line:297
+print_properties	../mantid_helper.py	/^def print_properties(ws_name):$/;"	kind:function	line:10
+range	../lib/file_helper.py	/^    def range(self, scan_range, frame_range):$/;"	kind:member	line:117
+range_nested	../lib/file_helper.py	/^    def range_nested(self, scan_range, frame_range):$/;"	kind:member	line:142
+repeat	../lib/file_helper.py	/^    def repeat(self, scan_number, frame_number, times=1):$/;"	kind:member	line:159
+root_path	../cg2_reduce.py	/^root_path = cg2.datafiles$/;"	kind:variable	line:58
+root_path	../cg2_reduce_20170818.py	/^root_path = cg2.datafiles$/;"	kind:variable	line:67
+root_path	../cg2_reduce_20170912.py	/^root_path = cg2.datafiles$/;"	kind:variable	line:81
+sample_scattering_list	../cg2_reduce.py	/^sample_scattering_list = cg2.range(45,1)$/;"	kind:variable	line:29
+sample_scattering_list	../cg2_reduce_20170818.py	/^sample_scattering_list = cg2.range("5-7,9", 1)$/;"	kind:variable	line:34
+sample_scattering_list	../cg2_reduce_20170912.py	/^sample_scattering_list = cg2.range_nested([11,13,14],["1-3",1,1])$/;"	kind:variable	line:34
+sample_transmission_list	../cg2_reduce.py	/^sample_transmission_list = cg2.range(15,1)$/;"	kind:variable	line:32
+sample_transmission_list	../cg2_reduce_20170818.py	/^sample_transmission_list = cg2.range("5,6,7,9", 1)$/;"	kind:variable	line:36
+sample_transmission_list	../cg2_reduce_20170912.py	/^sample_transmission_list = cg2.repeat(19,1, 3)$/;"	kind:variable	line:37
+sensitivity.py	../sensitivity.py	1;"	kind:file	line:1
+sensitivity_20170818.py	../sensitivity_20170818.py	1;"	kind:file	line:1
+sensitivity_dark_current	../cg2_reduce.py	/^sensitivity_dark_current =  CG2(18381,180).filepath(40,1)$/;"	kind:variable	line:46
+setUp	../lib/file_helper.py	/^    def setUp(self):$/;"	kind:member	line:338
+setUp	../lib/file_helper.py	/^    def setUp(self):$/;"	kind:member	line:399
+shared	../lib/file_helper.py	/^    def shared(self, *paths):$/;"	kind:member	line:187
+tearDown	../lib/file_helper.py	/^    def tearDown(self):$/;"	kind:member	line:341
+tearDown	../lib/file_helper.py	/^    def tearDown(self):$/;"	kind:member	line:402
+test_filepath	../lib/file_helper.py	/^    def test_filepath(self):$/;"	kind:member	line:345
+test_folders	../lib/file_helper.py	/^    def test_folders(self):$/;"	kind:member	line:376
+test_make_folders	../lib/file_helper.py	/^    def test_make_folders(self):$/;"	kind:member	line:381
+test_range_nested	../lib/file_helper.py	/^    def test_range_nested(self):$/;"	kind:member	line:405
+test_ranges	../lib/file_helper.py	/^    def test_ranges(self):$/;"	kind:member	line:355
+test_repeat	../lib/file_helper.py	/^    def test_repeat(self):$/;"	kind:member	line:389
+test_result	../lib/file_helper.py	/^    test_result = doctest.testmod(verbose=False)$/;"	kind:variable	line:425
+thickness_list	../cg2_reduce.py	/^thickness_list =  [0.1]$/;"	kind:variable	line:35
+thickness_list	../cg2_reduce_20170818.py	/^thickness_list = [0.1]*4$/;"	kind:variable	line:40
+thickness_list	../cg2_reduce_20170912.py	/^thickness_list = [0.2]*3$/;"	kind:variable	line:41
+ws_main_name	../cg2_reduce.py	/^    ws_main_name = os.path.basename( os.path.splitext(sample_scattering)[0])$/;"	kind:variable	line:73
+ws_main_name	../cg2_reduce_20170818.py	/^    ws_main_name = os.path.basename(os.path.splitext(sample_scattering)[0])$/;"	kind:variable	line:83
+ws_name	../cg2_reduce_20170912.py	/^    ws_name = Names(sample_scattering).parse()$/;"	kind:variable	line:92
